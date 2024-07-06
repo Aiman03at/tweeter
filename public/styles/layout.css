@@ -20,7 +20,7 @@ body {
   background-color: #f4f1ec;
   font-family:Source san3,sans-serif;
   font-size: 24px;
-  padding-top: 120px;
+ 
 }
 
 /*
@@ -29,5 +29,5 @@ body {
  .main{
   width:90%;
   align-items: center;
-  background-color: #f4f1ec;
+  background-color: inherit;
  }
