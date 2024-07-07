@@ -10,13 +10,13 @@ $(document).ready(function() {
     
     // Update the counter
     $('.counter').text(remainingChars);
-   
+    let $form = $(this).closest('form');
+    let $counter = $form.find('.counter');
     // Optionally, change the color of the counter if characters exceed the limit
     if (remainingChars < 0) {
-        $('.counter').css('color', 'red');
-    } else {
-        $('.counter').css('color', 'black');
-    }
-
+      $counter.addClass('counter-red');
+  } else {
+      $counter.removeClass('counter-red');
+  }
 });
 });

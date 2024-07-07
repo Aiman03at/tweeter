@@ -30,7 +30,7 @@
     box-sizing: border-box; /* Include padding in the element's total width and height */
     font-family: Arial, sans-serif;
     font-size: 16px;
-    resize: none; /* Prevents resizing */
+    
     margin-bottom: 15px;
     overflow: hidden; /* Hide scrollbars */
     line-height: 1.5; /* Ensure proper line height */
@@ -39,3 +39,11 @@
   display:flex;
   justify-content: space-between;
 }
+
+/*Adding a css class for the counter*/
+.counter-red{
+  color: red;
+}
+ 
+
+        
