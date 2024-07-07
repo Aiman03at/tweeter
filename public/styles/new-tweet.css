@@ -12,6 +12,7 @@
 .new-tweet form {
   display: flex;
   flex-direction: column;
+  margin: auto;
 }
 
 .new-tweet label {
@@ -21,9 +22,18 @@
 
 .new-tweet textarea {
   width: 100%;
-  border: none;
-  margin-bottom: 10% ;
-  border-bottom:  solid black;
+  background-color: none;
+    height: 40px; /* Height of a single line */
+    border: none; /* Remove all borders */
+    border-bottom: 2px solid #000; /* Add bottom border */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    resize: none; /* Prevents resizing */
+    margin-bottom: 15px;
+    overflow: hidden; /* Hide scrollbars */
+    line-height: 1.5; /* Ensure proper line height */
 }
 .new-tweet div{
   display:flex;
