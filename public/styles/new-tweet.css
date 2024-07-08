@@ -1,8 +1,10 @@
 .new-tweet{
+  width: 90%;
   display:flex;
-  align-items:center;
+  align-items: center;
   flex-direction: column;
   
+  font-size: medium;
 }
 .new-tweet button{
   font-family: 'Bungee';
@@ -10,6 +12,7 @@
   color: #FFFFFF;
 }
 .new-tweet form {
+  width:90%;
   display: flex;
   flex-direction: column;
   margin: auto;

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css"/>
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -31,6 +32,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
             integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/scripts/icon_hover.js"></script>       
   </head>
 
   <body>
@@ -44,7 +46,7 @@
         
     </nav>
     <!---Adding a header-->
-    <header>
+    <header class="main-header">
       <div>
         <img src="/images/profile-hex.png">
       </div>
@@ -68,8 +70,43 @@
               <output name="counter" class="counter" for="tweet-text">140</output>
             </div>
           </form>
-        </section>
+          <!--Adding a tweet container-->
+          </section>
+
+
+          <article>
+          
+          <!--Header for the tweet container-->
+          <header class="tweet-header">
+            <div>
+               <span><img src="/images/icons8-male-user-48.png"> Newton</span>
+               <span>@SirIsaac</span>
+            </div>
+            <div class="tweet-text">
+               <span> If I have seen further it is by standing on the shoulders of giants</span>
+            </div>
+            
+          </header>
+
+          <!---Footer for the tweet container-->
+          <footer>
+            <div class="time-stamp">
+                <span>10 days ago</span>
+            </div>
+            <div class="icons">
+                <i class="fa-solid fa-flag"></i>
+                <i class="fa-solid fa-retweet"></i>
+                <i class="fa-solid fa-heart"></i>
+            </div>
+        </footer>
+    
+    </article>
+  
+
+
       
+
+
     </main>
   </body>
 </html>

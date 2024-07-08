@@ -1,0 +1,58 @@
+article {
+  width:80%;
+ 
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+  margin-bottom: 120px;
+}
+
+article .tweet-header {
+  width:90%;
+  font-weight: bold;
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.tweet-header div{
+  width: 90%;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tweet-text {
+  border-bottom: 2px solid black;
+  padding: 10px;
+}
+
+article footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  width:80%; /* Ensure the footer spans the full width of the article */
+  padding: 5px; /* Optional padding for better spacing */
+}
+
+/* Hover effect for the article */
+article:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+}
+
+/* Icon color change on hover */
+footer .icons i {
+  transition: color 0.3s ease; /* Smooth transition for color changes */
+}
+
+footer .icons i:hover {
+  color:rgb(159, 159, 37); /* Change this color to the desired hover color */
+}
