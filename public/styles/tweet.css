@@ -1,4 +1,4 @@
-article {
+.tweet{
   width:80%;
  
   border: 2px solid black;
@@ -9,7 +9,7 @@ article {
   margin-bottom: 120px;
 }
 
-article .tweet-header {
+.tweet .tweet-header {
   width:90%;
   font-weight: bold;
   box-sizing: border-box; /* Include padding in the element's total width and height */
