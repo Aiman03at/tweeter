@@ -1,7 +1,8 @@
 .tweet{
-  width:80%;
- 
+  
+  width:90%;
   border: 2px solid black;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -30,8 +31,15 @@
 }
 
 .tweet-text {
-  border-bottom: 2px solid black;
+  font-size: 20px;
   padding: 10px;
+}
+.tweet-text hr {
+     border: none;
+      height: 2px; /* Set the height to increase thickness */
+      background-color: #333; /* Set the color */
+      width: 100; /* Set the width */
+      margin: 20px auto; 
 }
 
 article footer {
