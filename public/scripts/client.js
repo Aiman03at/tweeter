@@ -38,19 +38,10 @@
 
 $(document).ready(function() {
 
-  const renderTweets = function(tweets) {
-    // loops through tweets
-    tweets.forEach(tweet => {
-      // calls createTweetElement for each tweet
-      const tweetElement = createTweetElement(tweet);
-      // takes return value and appends it to the tweets container
-      $('#tweets-container').prepend(tweetElement);
-    });
-  }
 
   const createTweetElement = function(tweet) {
     // Your code for creating the tweet element
-    const time = timeAgo.format(tweet.created_at);
+    const time = timeago.format(tweet.created_at);
     const $tweet = $(`
       <article class="tweet">
             
@@ -72,7 +63,7 @@ $(document).ready(function() {
             <!---Footer for the tweet container-->
             <footer>
               <div class="time-stamp">
-                  <span>${time} days ago</span>
+                  <span>${time} </span>
               </div>
               <div class="icons">
                   <i class="fa-solid fa-flag"></i>
@@ -84,7 +75,19 @@ $(document).ready(function() {
       </article>
     `);
     return $tweet;
+  };
+
+  const renderTweets = function(tweets) {
+    // loops through tweets
+    tweets.forEach(tweet => {
+      // calls createTweetElement for each tweet
+      const tweetElement = createTweetElement(tweet);
+      // takes return value and appends it to the tweets container
+      $('#tweets-container').prepend(tweetElement);
+    });
   }
+
+  
 
   const loadTweets = function() {
     $.ajax({
@@ -107,7 +110,7 @@ $(document).ready(function() {
   //submit enent handler
   $form.on('submit', (event)=>{
     event.preventDefault();
-
+    console.log("form submitted")
     const tweetText = $('#tweet-text').val();
 
           if (tweetText.trim().length === 0) {
@@ -115,15 +118,12 @@ $(document).ready(function() {
             return;
           }
 
-          if (tweetText.length > 140) {
+          if (tweetText.trim.length > 140) {
             alert("Error: Tweet content is too long. Maximum length is 140 characters.");
             return;
           }
 
-          if (tweetText.length > 140) {
-            alert("Error: Tweet content is too long. Maximum length is 140 characters.");
-            return;
-          }
+          
     
     ///grab the form data
     //create a url -encoded string for post to send
@@ -133,23 +133,27 @@ $(document).ready(function() {
     method:'POST',
     url:'/tweets',
     data: formData,
-    success:(response)=>{
-      console.log(response);
-      //reftch the data
-      loadTweets();
-      //If the tweet text is empty, an alert is shown and the function returns early without clearing the form or submitting it.
-      $('#tweet-text').val('');
-      //If the tweet text exceeds 140 characters, an alert is shown and the function returns early without clearing the form or submitting it.
-      $('output.counter').text('140');
-    },
+    success:(response)=>{// Fetch the latest tweet only and prepend it
+    $.ajax({
+      method: 'GET',
+      url: '/tweets',
+      success: (dataFromServer) => {
+        const newTweet = dataFromServer[dataFromServer.length - 1];
+        const tweetElement = createTweetElement(newTweet);
+        $('#tweets-container').prepend(tweetElement);
+      }
+    });
+    // Clear the form
+    $('#tweet-text').val('');
+    $('output.counter').text('140');
+  },
+  error: (error) => {
+    alert("Error: Unable to post the tweet. Please try again later.");
+  }
 
-    error: (error) => {
-      alert("Error: Unable to post the tweet. Please try again later.");
-    }
-  });
   });
 
-  
+}); 
   
 });
 
