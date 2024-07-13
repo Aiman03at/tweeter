@@ -6,7 +6,7 @@
  
 
 //Tweet object///
-
+import { format } from 'timeago.js';
 const data = [
   {
     "user": {
@@ -50,7 +50,7 @@ $(document).ready(function() {
 
   const createTweetElement = function(tweet) {
     // Your code for creating the tweet element
-    const timeAgo = (Date.now() - tweet.created_at) / (1000 * 60 * 60 * 24);
+    const timeAgo = timeAgo.format(tweet.created_at);
     const $tweet = $(`
       <article class="tweet">
             
@@ -89,7 +89,7 @@ $(document).ready(function() {
   const loadTweets = function() {
     $.ajax({
       method : 'GET',
-      url :'/tweet',
+      url :'/tweets',
       success : (dataFromServer) =>{
         console.log(dataFromServer);
         renderTweets(dataFromServer);
@@ -104,16 +104,14 @@ $(document).ready(function() {
   const $form = $('#new-tweet-form');
 
   //listen for submit event of form
-
+  //submit enent handler
   $form.on('submit', (event)=>{
     event.preventDefault();
     
     ///grab the form data
     //create a url -encoded string for post to send
     const formData = form.serialize();
-  });
-
-  //POST the form information to the server
+    //POST the form information to the server
   $.ajax({
     method:'POST',
     url:'/tweets',
@@ -124,7 +122,10 @@ $(document).ready(function() {
       loadTweets();
 
     }
-  })
+  });
+  });
+
+  
   
 });
 
