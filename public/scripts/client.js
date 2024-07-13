@@ -6,8 +6,8 @@
  
 
 //Tweet object///
-import { format } from 'timeago.js';
-const data = [
+
+/*const data = [
   {
     "user": {
       "name": "Newton",
@@ -30,7 +30,7 @@ const data = [
     },
     "created_at": 1461113959088
   }
-]
+]*/
 
 
 
