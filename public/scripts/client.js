@@ -50,7 +50,7 @@ $(document).ready(function() {
 
   const createTweetElement = function(tweet) {
     // Your code for creating the tweet element
-    const timeAgo = timeAgo.format(tweet.created_at);
+    const time = timeAgo.format(tweet.created_at);
     const $tweet = $(`
       <article class="tweet">
             
@@ -72,7 +72,7 @@ $(document).ready(function() {
             <!---Footer for the tweet container-->
             <footer>
               <div class="time-stamp">
-                  <span>${Math.floor(timeAgo)} days ago</span>
+                  <span>${time} days ago</span>
               </div>
               <div class="icons">
                   <i class="fa-solid fa-flag"></i>
@@ -110,7 +110,7 @@ $(document).ready(function() {
     
     ///grab the form data
     //create a url -encoded string for post to send
-    const formData = form.serialize();
+    const formData = $form.serialize();
     //POST the form information to the server
   $.ajax({
     method:'POST',
