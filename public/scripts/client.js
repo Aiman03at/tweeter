@@ -34,28 +34,36 @@
 
 
 
+    
 
 
 $(document).ready(function() {
 
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   const createTweetElement = function(tweet) {
     // Your code for creating the tweet element
     const time = timeago.format(tweet.created_at);
+    const safeText = escape(tweet.content.text); // Use escape function here
+
     const $tweet = $(`
       <article class="tweet">
             
             <!--Header for the tweet container-->
             <header class="tweet-header">
               <div>
-                 <span><img src="${tweet.user.avatars}" alt="no image"> ${tweet.user.name}</span>
-                 <span>${tweet.user.handle}</span>
+                 <span><img src="${escape(tweet.user.avatars)}" alt="no image"> ${escape(tweet.user.name)}</span>
+                 <span>${escape(tweet.user.handle)}</span>
               </div>
               
             </header>
   
             <div class="tweet-text">
-              <span> ${tweet.content.text}</span>
+              <span> ${safeText}</span>
               <hr>
            </div>
            
