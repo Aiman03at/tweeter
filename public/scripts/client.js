@@ -134,15 +134,10 @@ $(document).ready(function() {
     url:'/tweets',
     data: formData,
     success:(response)=>{// Fetch the latest tweet only and prepend it
-    $.ajax({
-      method: 'GET',
-      url: '/tweets',
-      success: (dataFromServer) => {
-        const newTweet = dataFromServer[dataFromServer.length - 1];
-        const tweetElement = createTweetElement(newTweet);
-        $('#tweets-container').prepend(tweetElement);
-      }
-    });
+      $('#tweets-container').empty();
+
+
+    loadTweets();
     // Clear the form
     $('#tweet-text').val('');
     $('output.counter').text('140');
