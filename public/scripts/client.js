@@ -107,6 +107,23 @@ $(document).ready(function() {
   //submit enent handler
   $form.on('submit', (event)=>{
     event.preventDefault();
+
+    const tweetText = $('#tweet-text').val();
+
+          if (tweetText.trim().length === 0) {
+            alert("Error: Tweet content cannot be empty.");
+            return;
+          }
+
+          if (tweetText.length > 140) {
+            alert("Error: Tweet content is too long. Maximum length is 140 characters.");
+            return;
+          }
+
+          if (tweetText.length > 140) {
+            alert("Error: Tweet content is too long. Maximum length is 140 characters.");
+            return;
+          }
     
     ///grab the form data
     //create a url -encoded string for post to send
@@ -120,7 +137,14 @@ $(document).ready(function() {
       console.log(response);
       //reftch the data
       loadTweets();
+      //If the tweet text is empty, an alert is shown and the function returns early without clearing the form or submitting it.
+      $('#tweet-text').val('');
+      //If the tweet text exceeds 140 characters, an alert is shown and the function returns early without clearing the form or submitting it.
+      $('output.counter').text('140');
+    },
 
+    error: (error) => {
+      alert("Error: Unable to post the tweet. Please try again later.");
     }
   });
   });
