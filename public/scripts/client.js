@@ -119,18 +119,20 @@ $(document).ready(function() {
   $form.on('submit', (event)=>{
     event.preventDefault();
     console.log("form submitted")
-    const tweetText = $('#tweet-text').val();
+    const tweetText = $('#tweet-text').val().trim();
+    const $errorMessage = $('#error-message');
 
-          if (tweetText.trim().length === 0) {
-            alert("Error: Tweet content cannot be empty.");
-            return;
-          }
+    if (tweetText.length === 0) {
+      $errorMessage.text("Error: Tweet content cannot be empty.").slideDown();
+      return;
+    }
 
-          if (tweetText.trim.length > 140) {
-            alert("Error: Tweet content is too long. Maximum length is 140 characters.");
-            return;
-          }
+    if (tweetText.length > 140) {
+      $errorMessage.text("Error: Tweet content is too long. Maximum length is 140 characters.").slideDown();
+      return;
+    }
 
+    $errorMessage.slideUp();
           
     
     ///grab the form data
