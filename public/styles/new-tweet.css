@@ -51,6 +51,7 @@
 
   /*styling alert messages*/     
 .error-message {
+  display: none;
   color: #ff0000; /* Red text */
   background-color: #ffe6e6; /* Light red background */
   border: 1px solid #ff0000; /* Red border */

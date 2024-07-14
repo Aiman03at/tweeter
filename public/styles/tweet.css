@@ -73,3 +73,36 @@ footer .icons i {
 footer .icons i:hover {
   color:rgb(159, 159, 37); /* Change this color to the desired hover color */
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  
+  #tweets-container {
+      margin-left: 0;
+      margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .new-tweet button,
+  .new-tweet .counter {
+      width: 100%;
+      text-align: center;
+  }
+
+  .tweet-header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .tweet-footer {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+}
