@@ -19,6 +19,6 @@ This repository is the starter code for the project: Students will fork and clon
 - body-parser
 
 ## Screenshots
--
--
--
+-!["Screenshot of tweetbox "]https://github.com/Aiman03at/tweeter/blob/master/docs/create_new_tweet.png
+-!["Screenshot of new tweeets"]https://github.com/Aiman03at/tweeter/blob/master/docs/new_tweet.png
+-!["Screenshot of mobile responsive view"]https://github.com/Aiman03at/tweeter/blob/master/docs/mobile-responsive.png
