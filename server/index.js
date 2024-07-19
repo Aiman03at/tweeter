@@ -35,3 +35,7 @@ app.use("/tweets", tweetsRoutes);
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });
+
+
+///creating a post request to handle form submission//
+

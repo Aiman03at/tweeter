@@ -28,4 +28,16 @@ color: red;
 
 .nav_tweet{
   font-family: sans-serif;
+  font-size: 60%;
+}
+
+/*responsive*/
+@media (max-width: 760px) {
+
+nav {
+    background-color: transparent;
+    
+    
+  }
+
 }

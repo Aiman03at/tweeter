@@ -3,7 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
      <!--External fonts-->
@@ -46,15 +46,16 @@
 
         
     </nav>
+    <div class="tweeter">
     <!---Adding a header-->
     <header class="main-header">
       <div>
         <img src="/images/profile-hex.png">
+        
+        <h4>Aiman Mushtaq</h4>
       </div>
-      <br>
-      <div>
-        <h2>Aiman Mushtaq</h2>
-      </div>
+      
+      
     </header>
 
     <!-- Page-specific (main) content here -->
@@ -64,7 +65,7 @@
         <section class="new-tweet">
           <h2>Compose Tweet</h2>
           <!-- Error message element -->
-          <div id="error-message" class="error-message" style="display: none;"></div>
+           <div id="error-message" class="error-message" style="display: none;"></div>
           <form id = "new-tweet-form">
             <label for="tweet-text">What are you humming about?</label>
             <textarea name="text" id="tweet-text"></textarea>
@@ -116,5 +117,6 @@
 
 
     </main>
+  </div>
   </body>
 </html>
