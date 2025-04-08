@@ -22,16 +22,8 @@ img {
   height: 60%;
 }
 
-@media (min-width:790px) {
-  .main-header {
-    flex-direction: column;
-    width: 50%;
-    height: 320px;
-    padding-top: 120px;
 
-}
-}
-@media (min-width: 1023px){
+@media (min-width: 760px){
   .main-header {
       flex-direction: column;
       width: 50%;
